@@ -1,0 +1,22 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pensionsystem 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pensionsystem
+  template:
+    metadata:
+      labels:
+        app: pensionsystem 
+    spec:
+      containers:
+        - name: pensionsystem 
+          image: saiproject.azurecr.io/pensionsystem
+          ports:
+          - containerPort: 80
+
+
+
